@@ -1,0 +1,40 @@
+#include <stdio.h>
+#include <string.h>
+
+#define SIZE 5
+
+struct Country
+{
+    char name[50];
+    char capital[50];
+};
+
+int main()
+{
+    struct Country countries[SIZE];
+
+    //Accept input values
+    int index=0;
+    while(index < SIZE)
+    {
+        scanf("%s\n%s\n", countries[index].name, countries[index].capital);
+        index++;
+    }
+
+    char inputCountryName[50];
+    scanf("%s", inputCountryName);
+
+    index=0;
+    while(index < SIZE)
+    {
+        if(strcmp(inputCountryName,countries[index].name) == 0)
+        {
+            printf("%s", countries[index].capital);
+            return 0; //As the country capital is found and printed exit the method
+        }
+        index++;
+
+    }//end of while loop
+
+    return 0;
+}
