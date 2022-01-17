@@ -1,0 +1,16 @@
+#include <stdio.h>
+
+struct Student
+{
+    char name[50];
+    char college[50];
+};
+
+int main()
+{
+    struct Student student;
+    scanf("%s\n%s", student.name, student.college);
+
+    printf("The student name is %s and he studies in %s",student.name,student.college);
+    return 0;
+}
